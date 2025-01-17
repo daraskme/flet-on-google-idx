@@ -1,5 +1,3 @@
-# To learn more about how to use Nix to configure your environment
-# see: https://developers.google.com/idx/guides/customize-idx-env
 { pkgs, ... }: {
   # nixpkgs channel
   channel = "stable-23.11";
@@ -30,8 +28,8 @@
           python -m venv $VENV_DIR
 
           if [ ! -f requirements.txt ]; then
-            echo "requirements.txt not found. Creating one with flet..."
-            echo "flet" > requirements.txt
+            echo "requirements.txt not found. Creating one with flet and flet_desktop..."
+            echo -e "flet\nflet-desktop" > requirements.txt
           fi
 
           # activate virtual env and install requirements
@@ -52,8 +50,8 @@
           fi
 
           if [ ! -f requirements.txt ]; then
-            echo "requirements.txt not found. Creating one with flet..."
-            echo "flet" > requirements.txt
+            echo "requirements.txt not found. Creating one with flet and flet_desktop..."
+            echo -e "flet\nflet-desktop" > requirements.txt
           fi
 
           # activate virtual env and install requirements
